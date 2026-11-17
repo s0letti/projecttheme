@@ -153,6 +153,10 @@
   text-transform: uppercase;
 }
 
+.carousel-w__card.is-active .carousel-w__phase {
+  background-color: var(--theme-color-accent);
+}
+
 .carousel-w__title {
   margin: 0 0 0.6rem;
   color: inherit;

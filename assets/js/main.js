@@ -19,18 +19,26 @@ function initializeWideCarousels() {
 			return;
 		}
 
-		const createClone = (index) => {
+		const createClone = (index, cycle) => {
 			const clone = cards[index].cloneNode(true);
 			clone.classList.remove('is-active');
 			clone.classList.add('is-clone');
 			clone.dataset.carouselWClone = String(index);
+			clone.dataset.carouselWCycle = String(cycle);
 			clone.setAttribute('aria-hidden', 'true');
 			clone.inert = true;
 			return clone;
 		};
 
-		track.insertBefore(createClone(cards.length - 1), cards[0]);
-		track.appendChild(createClone(0));
+		const beforeClones = document.createDocumentFragment();
+		cards.forEach((card, index) => {
+			beforeClones.appendChild(createClone(index, -1));
+		});
+		track.insertBefore(beforeClones, cards[0]);
+
+		cards.forEach((card, index) => {
+			track.appendChild(createClone(index, 1));
+		});
 		const slides = Array.from(track.children);
 
 		const getCenteredSlide = () => {
@@ -50,12 +58,18 @@ function initializeWideCarousels() {
 			});
 		};
 
-		const setActive = (index, scroll = false, direction = 0) => {
-			const previousIndex = activeIndex;
+		const setActive = (index, scroll = false, direction = 0, centeredSlide = null) => {
 			activeIndex = (index + cards.length) % cards.length;
+			let targetSlide = centeredSlide || cards[activeIndex];
 
-			cards.forEach((card, cardIndex) => {
-				card.classList.toggle('is-active', cardIndex === activeIndex);
+			if (scroll && direction > 0 && activeIndex === 0) {
+				targetSlide = slides.find((slide) => slide.dataset.carouselWClone === '0' && slide.dataset.carouselWCycle === '1');
+			} else if (scroll && direction < 0 && activeIndex === cards.length - 1) {
+				targetSlide = slides.find((slide) => slide.dataset.carouselWClone === String(cards.length - 1) && slide.dataset.carouselWCycle === '-1');
+			}
+
+			slides.forEach((slide) => {
+				slide.classList.toggle('is-active', slide === targetSlide);
 			});
 			indicators.forEach((indicator, indicatorIndex) => {
 				const isActive = indicatorIndex === activeIndex;
@@ -65,14 +79,6 @@ function initializeWideCarousels() {
 
 			if (scroll) {
 				const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
-				let targetSlide = cards[activeIndex];
-
-				if (direction > 0 && previousIndex === cards.length - 1 && activeIndex === 0) {
-					targetSlide = slides[slides.length - 1];
-				} else if (direction < 0 && previousIndex === 0 && activeIndex === cards.length - 1) {
-					targetSlide = slides[0];
-				}
-
 				scrollToSlide(targetSlide, behavior);
 			}
 		};
@@ -101,7 +107,7 @@ function initializeWideCarousels() {
 					? Number(centeredSlide.dataset.carouselWClone)
 					: cards.indexOf(centeredSlide);
 
-				setActive(centeredIndex);
+				setActive(centeredIndex, false, 0, centeredSlide);
 				scrollFrame = null;
 			});
 
