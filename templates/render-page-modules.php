@@ -33,6 +33,9 @@ while (have_rows('page_modules')) : the_row();
   }
 
   switch (get_row_layout()) {
+    case 'hero':
+      get_template_part('template-parts/flex/layout', 'hero'); break;
+
     case 'intro':
       get_template_part('template-parts/flex/layout', 'intro'); break;
 
@@ -56,6 +59,9 @@ while (have_rows('page_modules')) : the_row();
 
     case 'image_slider':
       get_template_part('template-parts/flex/layout', 'image-slider'); break;
+
+    case 'carousel_w':
+      get_template_part('template-parts/flex/layout', 'carousel-w'); break;
 
     case 'bildboxen':
       get_template_part('template-parts/flex/layout', 'bildboxen'); break;
