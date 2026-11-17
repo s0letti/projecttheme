@@ -1,0 +1,58 @@
+/*
+ * Typography
+ */
+html,
+body {
+ color: var(--theme-color-text-default);
+  font-family: var(--theme-font-family-body);
+  font-size: var(--theme-font-size-body);
+  line-height: var(--theme-line-height-body);
+}
+
+h1{
+  color: var(--theme-color-primary);
+  font-family: var(--theme-font-family-heading);
+  font-size: var(--theme-font-size-body-heading);
+  line-height: var(--theme-line-height-heading);
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+.intro-kicker {
+  letter-spacing: 0.08em;
+  opacity: 0.75;
+}
+
+.intro-title {
+  line-height: 1.1;
+}
+
+.intro-text {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Inter-Regular.woff2') format('woff2'),
+       url('../fonts/Inter-Regular.woff') format('woff');
+}
+
+@font-face{
+  font-display: swap;
+  font-family: 'Poller One';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/PollerOne-Regular.woff2') format('woff2'),
+       url('../fonts/PollerOne-Regular.woff') format('woff');
+}

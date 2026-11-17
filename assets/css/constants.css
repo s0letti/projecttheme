@@ -1,0 +1,24 @@
+/*
+ * Constants
+ *
+ * Keep colors and reusable theme values here.
+ */
+:root {
+  --theme-color-primary: #FF5628;
+  --theme-color-secondary: #FFD2BE;
+  --theme-color-accent: #9F69A0;
+  --theme-color-2accent: #7F3E80;
+  --theme-color-text-default-default: #000000;
+  --theme-color-text-default-light: #FFFFFF;
+  --theme-color-text-default-orange: #FF5628;
+  --theme-color-body: #FFFFFF;
+
+  --theme-transition: all 0.3s ease-in-out;
+
+  --theme-font-family-body: 'Inter', sans-serif;
+  --theme-font-family-heading: 'Poller One';
+  
+  --theme-font-size-base: 1rem;
+  --theme-font-size-body: 1.5;
+  --theme-font-size-body-heading: 2.5rem;
+}
