@@ -191,6 +191,44 @@
   background-color: var(--carousel-w-card-bg-dark);
 }
 
+/*** Wide Carousel Intro ***/
+
+.section.text-block {
+  padding-top: clamp(4rem, 7.5vw, 6rem);
+  padding-bottom: clamp(4rem, 7.5vw, 6rem);
+  color: var(--theme-color-text-default-default);
+  background-color: var(--theme-color-body);
+}
+
+.text-block__content {
+  max-width: 70rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text-block__title {
+  margin: 0 0 2rem;
+  color: inherit;
+  font-family: var(--theme-font-family-heading, var(--sds-typography-heading-font-family, inherit));
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+
+.text-block__paragraph {
+  margin: 0 auto 1.5rem;
+  font-size: clamp(1rem, 1.8vw, 1.5rem);
+  line-height: 1.4;
+  font-family: var(--sds-typography-body-font-family);
+  font-size: var(--sds-typography-body-size-medium);
+  font-style: normal;
+  font-weight: var(--sds-typography-body-font-weight-regular);
+  line-height: 140%; /* 22.4px */
+}
+
+.text-block__paragraph:last-child {
+  margin-bottom: 0;
+}
+
 .carousel-w__indicator:focus-visible,
 .carousel-w__viewport:focus-visible {
   outline: 2px solid var(--theme-color-primary);

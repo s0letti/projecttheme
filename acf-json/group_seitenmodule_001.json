@@ -985,6 +985,88 @@
                     "acfe_flexible_settings_size": false,
                     "acfe_flexible_modal_edit_size": false
                 },
+                "layout_carousel_w_intro": {
+                    "key": "layout_carousel_w_intro",
+                    "name": "carousel_w_intro",
+                    "label": "Textblock – Know Your Flow",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_carousel_w_intro_title",
+                            "label": "Titel",
+                            "name": "carousel_w_intro_title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_carousel_w_intro_paragraph_one",
+                            "label": "Text Absatz 1",
+                            "name": "carousel_w_intro_paragraph_one",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "acfe_textarea_code": 0,
+                            "maxlength": "",
+                            "rows": 3,
+                            "placeholder": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_carousel_w_intro_paragraph_two",
+                            "label": "Text Absatz 2",
+                            "name": "carousel_w_intro_paragraph_two",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "acfe_textarea_code": 0,
+                            "maxlength": "",
+                            "rows": 4,
+                            "placeholder": "",
+                            "new_lines": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Interaktive Elemente"
+                    ],
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_thumbnail": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": false,
+                    "acfe_flexible_modal_edit_size": false
+                },
                 "layout_bildboxen": {
                     "key": "layout_bildboxen",
                     "name": "bildboxen",
@@ -1831,5 +1913,5 @@
             "json"
         ]
     },
-    "modified": 1794910237
+    "modified": 1794911838
 }

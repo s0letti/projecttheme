@@ -63,6 +63,9 @@ while (have_rows('page_modules')) : the_row();
     case 'carousel_w':
       get_template_part('template-parts/flex/layout', 'carousel-w'); break;
 
+    case 'carousel_w_intro':
+      get_template_part('template-parts/flex/layout', 'text-block'); break;
+
     case 'bildboxen':
       get_template_part('template-parts/flex/layout', 'bildboxen'); break;
 
