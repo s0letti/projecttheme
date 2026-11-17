@@ -94,14 +94,87 @@
   object-fit: cover;
 }
 
+/*** Text and Image ***/
+
+.text-img {
+  color: var(--theme-color-text-default-default);
+}
+
+.text-img__copy {
+  order: 1;
+}
+
+.text-img__media {
+  order: 2;
+}
+
+.text-img__title {
+  margin: 0 0 1.5rem;
+  color: inherit;
+  font-family: var(--theme-font-family-heading, var(--sds-typography-heading-font-family, inherit));
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+
+.text-img__text {
+  font-family: var(--theme-font-family-body, var(--sds-typography-body-font-family, sans-serif));
+  font-size: var(--sds-typography-body-size-medium, 1rem);
+  line-height: 1.4;
+}
+
+.text-img__text > :last-child {
+  margin-bottom: 0;
+}
+
+.text-img__media {
+  text-align: center;
+}
+
+.text-img__image {
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+}
+
 /*** Wide Card Carousel ***/
 
 .carousel-w {
+  width: 100%;
   --carousel-w-card-bg: var(--theme-color-accent);
   --carousel-w-card-bg-dark: var(--theme-color-2accent);
 }
 
+.carousel-w__frame {
+  position: relative;
+}
+
+.carousel-w__frame::before,
+.carousel-w__frame::after {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  width: clamp(1.5rem, 5vw, 4rem);
+  content: "";
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.carousel-w__frame::before {
+  left: 0;
+  -webkit-mask-image: linear-gradient(to right, #000, transparent);
+  mask-image: linear-gradient(to right, #000, transparent);
+}
+
+.carousel-w__frame::after {
+  right: 0;
+  -webkit-mask-image: linear-gradient(to left, #000, transparent);
+  mask-image: linear-gradient(to left, #000, transparent);
+}
+
 .carousel-w__viewport {
+  width: 100%;
   overflow-x: auto;
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
@@ -177,6 +250,10 @@
   margin-top: 1.25rem;
 }
 
+.carousel-w__indicators[hidden] {
+  display: none;
+}
+
 .carousel-w__indicator {
   width: 0.65rem;
   height: 0.65rem;
@@ -189,6 +266,43 @@
 
 .carousel-w__indicator.is-active {
   background-color: var(--carousel-w-card-bg-dark);
+}
+
+/*** Carousel Navigation ***/
+
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 3.75rem;
+  background-color: var(--theme-color-body);
+}
+
+.carousel-nav[hidden] {
+  display: none;
+}
+
+.carousel-nav__dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  padding: 0;
+  background-color: var(--theme-color-accent);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.carousel-nav__dot.is-active,
+.carousel-nav__dot[aria-pressed="true"] {
+  transform: scale(1.5);
+}
+
+.carousel-nav__dot:focus-visible {
+  outline: 2px solid var(--theme-color-primary);
+  outline-offset: 4px;
 }
 
 /*** Wide Carousel Intro ***/

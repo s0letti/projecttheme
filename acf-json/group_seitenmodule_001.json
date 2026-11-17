@@ -788,6 +788,93 @@
                     "acfe_flexible_settings_size": false,
                     "acfe_flexible_modal_edit_size": false
                 },
+                "layout_text_img": {
+                    "key": "layout_text_img",
+                    "name": "text_img",
+                    "label": "Text und Bild",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_text_img_headline",
+                            "label": "Überschrift",
+                            "name": "headline",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_text_img_text",
+                            "label": "Text",
+                            "name": "text",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "default_value": "",
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_text_img_image",
+                            "label": "Bild rechts",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": 0,
+                            "min_height": 0,
+                            "min_size": 0,
+                            "max_width": 0,
+                            "max_height": 0,
+                            "max_size": 0,
+                            "mime_types": "",
+                            "uploader": "",
+                            "acfe_thumbnail": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Text und Bild"
+                    ],
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_thumbnail": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": false,
+                    "acfe_flexible_modal_edit_size": false
+                },
                 "layout_image_slider": {
                     "key": "layout_image_slider",
                     "name": "image_slider",
@@ -885,6 +972,26 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_carousel_w_key",
+                            "label": "Carousel-Verknüpfungsschlüssel",
+                            "name": "carousel_key",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Den gleichen Schlüssel im Carousel_nav-Modul verwenden.",
+                            "required": true,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": 50,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
                             "key": "field_carousel_w_cards",
                             "label": "Karten",
                             "name": "cards",
@@ -970,6 +1077,46 @@
                                     "parent_repeater": "field_carousel_w_cards"
                                 }
                             ]
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Interaktive Elemente"
+                    ],
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_thumbnail": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": false,
+                    "acfe_flexible_modal_edit_size": false
+                },
+                "layout_carousel_nav": {
+                    "key": "layout_carousel_nav",
+                    "name": "carousel_nav",
+                    "label": "Carousel_nav",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_carousel_nav_key",
+                            "label": "Carousel-Verknüpfungsschlüssel",
+                            "name": "carousel_key",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Den gleichen Schlüssel wie im zugehörigen Carousel_W-Modul eintragen.",
+                            "required": true,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": 50,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
                         }
                     ],
                     "min": "",
@@ -1913,5 +2060,5 @@
             "json"
         ]
     },
-    "modified": 1794911838
+    "modified": 1794927141
 }

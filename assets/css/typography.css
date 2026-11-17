@@ -43,16 +43,14 @@ a:active {
   font-display: swap;
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/Inter-Regular.woff2') format('woff2'),
-       url('../fonts/Inter-Regular.woff') format('woff');
+  font-weight: 300;
+  src: url('../fonts/Inter-Regular.woff2') format('woff2');
 }
 
-@font-face{
+@font-face {
   font-display: swap;
   font-family: 'Poller One';
   font-style: normal;
-  font-weight: 600;
-  src: url('../fonts/PollerOne-Regular.woff2') format('woff2'),
-       url('../fonts/PollerOne-Regular.woff') format('woff');
+  font-weight: 400;
+  src: url('../fonts/PollerOne-Regular.woff2') format('woff2');
 }

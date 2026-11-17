@@ -11,9 +11,10 @@ if (!function_exists('have_rows') || !have_rows('page_modules')) {
 while (have_rows('page_modules')) : the_row();
 
   // Section-Optionen 
+  $layout = get_row_layout();
   $opts = [
-    'name'       => get_row_layout(),
-    'container'  => get_sub_field('container') ?: 'container-lg',
+    'name'       => $layout,
+    'container'  => $layout === 'carousel_w' ? 'none' : (get_sub_field('container') ?: 'container-lg'),
     'padding_y'  => get_sub_field('padding_y') ?: 'py-5',
     'bg'         => get_sub_field('background') ?: 'none',
     'id'         => get_sub_field('id-anchor') ?: '',
@@ -57,11 +58,17 @@ while (have_rows('page_modules')) : the_row();
     case 'image_left_text_right':
       get_template_part('template-parts/flex/layout', 'image-left-text-right'); break;
 
+    case 'text_img':
+      get_template_part('template-parts/flex/layout', 'text-img'); break;
+
     case 'image_slider':
       get_template_part('template-parts/flex/layout', 'image-slider'); break;
 
     case 'carousel_w':
       get_template_part('template-parts/flex/layout', 'carousel-w'); break;
+
+    case 'carousel_nav':
+      get_template_part('template-parts/flex/layout', 'carousel-nav'); break;
 
     case 'carousel_w_intro':
       get_template_part('template-parts/flex/layout', 'text-block'); break;

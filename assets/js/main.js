@@ -40,6 +40,29 @@ function initializeWideCarousels() {
 			track.appendChild(createClone(index, 1));
 		});
 		const slides = Array.from(track.children);
+		const carouselKey = carousel.dataset.carouselKey?.trim().toLowerCase();
+		const linkedNav = carouselKey
+			? Array.from(document.querySelectorAll('[data-carousel-nav]'))
+				.find((nav) => nav.dataset.carouselKey?.trim().toLowerCase() === carouselKey)
+			: null;
+
+		if (linkedNav) {
+			linkedNav.replaceChildren(...cards.map((card, index) => {
+				const dot = document.createElement('button');
+				dot.type = 'button';
+				dot.className = 'carousel-nav__dot';
+				dot.dataset.carouselNavIndex = String(index);
+				dot.setAttribute('aria-label', linkedNav.dataset.slideLabel.replace('%d', String(index + 1)));
+				dot.setAttribute('aria-pressed', 'false');
+				return dot;
+			}));
+			linkedNav.hidden = false;
+			indicators.push(...Array.from(linkedNav.querySelectorAll('[data-carousel-nav-index]')));
+			const internalIndicators = carousel.querySelector('.carousel-w__indicators');
+			if (internalIndicators) {
+				internalIndicators.hidden = true;
+			}
+		}
 
 		const getCenteredSlide = () => {
 			const viewportCenter = viewport.getBoundingClientRect().left + viewport.clientWidth / 2;
@@ -51,9 +74,11 @@ function initializeWideCarousels() {
 		};
 
 		const scrollToSlide = (slide, behavior) => {
-			const slideLeft = slide.getBoundingClientRect().left - viewport.getBoundingClientRect().left + viewport.scrollLeft;
+			const slideRect = slide.getBoundingClientRect();
+			const viewportRect = viewport.getBoundingClientRect();
+			const targetLeft = viewport.scrollLeft + slideRect.left + slideRect.width / 2 - viewportRect.left - viewport.clientWidth / 2;
 			viewport.scrollTo({
-				left: slideLeft - (viewport.clientWidth - slide.clientWidth) / 2,
+				left: targetLeft,
 				behavior,
 			});
 		};
@@ -71,7 +96,8 @@ function initializeWideCarousels() {
 			slides.forEach((slide) => {
 				slide.classList.toggle('is-active', slide === targetSlide);
 			});
-			indicators.forEach((indicator, indicatorIndex) => {
+			indicators.forEach((indicator) => {
+				const indicatorIndex = Number(indicator.dataset.carouselWIndicator ?? indicator.dataset.carouselNavIndex);
 				const isActive = indicatorIndex === activeIndex;
 				indicator.classList.toggle('is-active', isActive);
 				indicator.setAttribute('aria-pressed', String(isActive));
@@ -83,7 +109,8 @@ function initializeWideCarousels() {
 			}
 		};
 
-		indicators.forEach((indicator, index) => {
+		indicators.forEach((indicator) => {
+			const index = Number(indicator.dataset.carouselWIndicator ?? indicator.dataset.carouselNavIndex);
 			indicator.addEventListener('click', () => setActive(index, true));
 		});
 
