@@ -150,7 +150,7 @@ h5{
 }
 
 .footer-logo img {
-  max-width: 100px;
+  max-width: 200px;
   height: auto;
   color: var(--theme-color-text-default-orange);
 }
