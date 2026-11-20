@@ -245,6 +245,46 @@
                     "acfe_flexible_settings_size": false,
                     "acfe_flexible_modal_edit_size": false
                 },
+                "layout_hero_logo": {
+                    "key": "layout_hero_logo",
+                    "name": "hero_logo",
+                    "label": "Hero Logo",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_hero_logo_alt",
+                            "label": "Alternativtext",
+                            "name": "logo_alt",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Text alternative for screen readers.",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Flowwing",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Text und Bild"
+                    ],
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_thumbnail": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": false,
+                    "acfe_flexible_modal_edit_size": false
+                },
                 "layout_breaker": {
                     "key": "layout_breaker",
                     "name": "breaker",
@@ -1260,6 +1300,409 @@
                     "acfe_flexible_settings_size": false,
                     "acfe_flexible_modal_edit_size": false
                 },
+                "layout_cycle_counter": {
+                    "key": "layout_cycle_counter",
+                    "name": "cycle_counter",
+                    "label": "Cycle Counter",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_cycle_counter_period_description",
+                            "label": "Menstruation (days 1-5)",
+                            "name": "period_description",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "You are currently on your period. Oestrogen and progesterone levels are typically low. Your body is working hard right now. If possible, try to schedule fewer appointments and allow yourself some breaks.",
+                            "acfe_textarea_code": 0,
+                            "maxlength": "",
+                            "rows": 3,
+                            "placeholder": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_cycle_counter_follicular_description",
+                            "label": "Follicular phase (days 6-13)",
+                            "name": "follicular_description",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "You are in the follicular phase. Oestrogen levels generally rise as a follicle develops. You may notice changes in your energy or focus; every cycle is different.",
+                            "acfe_textarea_code": 0,
+                            "maxlength": "",
+                            "rows": 3,
+                            "placeholder": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_cycle_counter_ovulation_description",
+                            "label": "Ovulation (around day 14)",
+                            "name": "ovulation_description",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Ovulation often happens around day 14 in a 28-day cycle, but timing can vary. Notice how your energy and body feel during this phase.",
+                            "acfe_textarea_code": 0,
+                            "maxlength": "",
+                            "rows": 3,
+                            "placeholder": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_cycle_counter_luteal_description",
+                            "label": "Luteal phase (days 15-28)",
+                            "name": "luteal_description",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "You are in the luteal phase. Progesterone typically rises after ovulation, and your energy or mood may shift. Notice what feels supportive for you.",
+                            "acfe_textarea_code": 0,
+                            "maxlength": "",
+                            "rows": 3,
+                            "placeholder": "",
+                            "new_lines": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Interaktive Elemente"
+                    ],
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_thumbnail": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": false,
+                    "acfe_flexible_modal_edit_size": false
+                },
+                "layout_button": {
+                    "key": "layout_button",
+                    "name": "button",
+                    "label": "Button",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_button_link",
+                            "label": "Button link",
+                            "name": "button_link",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": true,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Interaktive Elemente"
+                    ],
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_thumbnail": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": false,
+                    "acfe_flexible_modal_edit_size": false
+                },
+                "layout_htsy": {
+                    "key": "layout_htsy",
+                    "name": "htsy",
+                    "label": "HTSY",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_htsy_phase_tips",
+                            "label": "Phase-specific tips",
+                            "name": "phase_tips",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "Add advice cards for each cycle phase. Usually add Rest & Recovery, Movement, and Nutrition for each phase.",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "row",
+                            "min": 0,
+                            "max": 0,
+                            "rows_per_page": 20,
+                            "button_label": "Tipp hinzufügen",
+                            "collapsed": "field_htsy_category",
+                            "sub_fields": [
+                                {
+                                    "key": "field_htsy_phase",
+                                    "label": "Cycle phase",
+                                    "name": "phase",
+                                    "aria-label": "",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": true,
+                                    "conditional_logic": false,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "period": "Menstruation (days 1-5)",
+                                        "follicular": "Follicular phase (days 6-13)",
+                                        "ovulation": "Ovulation (around day 14)",
+                                        "luteal": "Luteal phase (days 15-28)"
+                                    },
+                                    "default_value": "period",
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "create_options": 0,
+                                    "save_options": 0,
+                                    "allow_custom": 0,
+                                    "search_placeholder": "",
+                                    "parent_repeater": "field_htsy_phase_tips"
+                                },
+                                {
+                                    "key": "field_htsy_category",
+                                    "label": "Card heading",
+                                    "name": "category",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": true,
+                                    "conditional_logic": false,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_htsy_phase_tips"
+                                },
+                                {
+                                    "key": "field_htsy_description",
+                                    "label": "Tip text",
+                                    "name": "description",
+                                    "aria-label": "",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": true,
+                                    "conditional_logic": false,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "acfe_textarea_code": 0,
+                                    "maxlength": "",
+                                    "rows": 3,
+                                    "placeholder": "",
+                                    "new_lines": "",
+                                    "parent_repeater": "field_htsy_phase_tips"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Interaktive Elemente"
+                    ],
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_thumbnail": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": false,
+                    "acfe_flexible_modal_edit_size": false
+                },
+                "layout_body_mind": {
+                    "key": "layout_body_mind",
+                    "name": "body_mind",
+                    "label": "Body & Mind",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_body_mind_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Body & Mind",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_body_mind_phase_content",
+                            "label": "Phase content",
+                            "name": "phase_content",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "Optional: customize the text and illustration for each cycle phase. Default text is shown when a description is left blank.",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "row",
+                            "min": 0,
+                            "max": 4,
+                            "rows_per_page": 20,
+                            "button_label": "Add phase content",
+                            "collapsed": "field_body_mind_phase",
+                            "sub_fields": [
+                                {
+                                    "key": "field_body_mind_phase",
+                                    "label": "Cycle phase",
+                                    "name": "phase",
+                                    "aria-label": "",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": true,
+                                    "conditional_logic": false,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "period": "Menstruation (days 1-5)",
+                                        "follicular": "Follicular phase (days 6-13)",
+                                        "ovulation": "Ovulation (around day 14)",
+                                        "luteal": "Luteal phase (days 15-28)"
+                                    },
+                                    "default_value": "period",
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "create_options": 0,
+                                    "save_options": 0,
+                                    "allow_custom": 0,
+                                    "search_placeholder": "",
+                                    "parent_repeater": "field_body_mind_phase_content"
+                                },
+                                {
+                                    "key": "field_body_mind_description",
+                                    "label": "Description",
+                                    "name": "description",
+                                    "aria-label": "",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": false,
+                                    "conditional_logic": false,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "acfe_textarea_code": 0,
+                                    "maxlength": "",
+                                    "rows": 6,
+                                    "placeholder": "",
+                                    "new_lines": "wpautop",
+                                    "parent_repeater": "field_body_mind_phase_content"
+                                },
+                                {
+                                    "key": "field_body_mind_illustration",
+                                    "label": "Illustration",
+                                    "name": "illustration",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "Optional image shown beside the phase text.",
+                                    "required": false,
+                                    "conditional_logic": false,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "parent_repeater": "field_body_mind_phase_content"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Interaktive Elemente"
+                    ],
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_thumbnail": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": false,
+                    "acfe_flexible_modal_edit_size": false
+                },
                 "layout_mood": {
                     "key": "layout_mood",
                     "name": "mood",
@@ -1371,6 +1814,153 @@
                     "max": "",
                     "acfe_flexible_category": [
                         "Interaktive Elemente"
+                    ],
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_thumbnail": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": false,
+                    "acfe_flexible_modal_edit_size": false
+                },
+                "layout_quote": {
+                    "key": "layout_quote",
+                    "name": "quote",
+                    "label": "Quote",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_quote_text",
+                            "label": "Zitat",
+                            "name": "quote_text",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Your cycle isn’t a limit. It’s a guide.",
+                            "acfe_textarea_code": 0,
+                            "maxlength": "",
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Text"
+                    ],
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_thumbnail": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": false,
+                    "acfe_flexible_modal_edit_size": false
+                },
+                "layout_how_it_works": {
+                    "key": "layout_how_it_works",
+                    "name": "how_it_works",
+                    "label": "How it works",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_how_it_works_heading",
+                            "label": "Überschrift",
+                            "name": "heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "How it works",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_how_it_works_steps",
+                            "label": "Schritte",
+                            "name": "steps",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "row",
+                            "min": 0,
+                            "max": 3,
+                            "rows_per_page": 20,
+                            "button_label": "Schritt hinzufügen",
+                            "collapsed": "field_how_it_works_step_title",
+                            "sub_fields": [
+                                {
+                                    "key": "field_how_it_works_step_title",
+                                    "label": "Titel",
+                                    "name": "step_title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": false,
+                                    "conditional_logic": false,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_how_it_works_steps"
+                                },
+                                {
+                                    "key": "field_how_it_works_step_description",
+                                    "label": "Beschreibung",
+                                    "name": "step_description",
+                                    "aria-label": "",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": false,
+                                    "conditional_logic": false,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "acfe_textarea_code": 0,
+                                    "maxlength": "",
+                                    "rows": 3,
+                                    "placeholder": "",
+                                    "new_lines": "",
+                                    "parent_repeater": "field_how_it_works_steps"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Text"
                     ],
                     "acfe_flexible_render_template": false,
                     "acfe_flexible_render_style": false,
@@ -2565,5 +3155,5 @@
             "json"
         ]
     },
-    "modified": 1795192759
+    "modified": 1795198516
 }

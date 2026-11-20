@@ -224,6 +224,48 @@ function readPeriodTrackingData(storageKey) {
 	return { periodDates, moods, activities };
 }
 
+function getCalendarDateKey(date) {
+	return [
+		date.getFullYear(),
+		String(date.getMonth() + 1).padStart(2, '0'),
+		String(date.getDate()).padStart(2, '0'),
+	].join('-');
+}
+
+function getCalendarDayNumber(dateKey) {
+	const [year, month, day] = dateKey.split('-').map(Number);
+	return Date.UTC(year, month - 1, day) / 86400000;
+}
+
+function getCurrentCycleInfo(periodDates, referenceDate = new Date()) {
+	const todayKey = getCalendarDateKey(referenceDate);
+	const pastPeriodDates = [...new Set(periodDates)]
+		.filter((dateKey) => dateKey <= todayKey)
+		.sort();
+
+	if (pastPeriodDates.length === 0) {
+		return null;
+	}
+
+	let periodStart = pastPeriodDates[0];
+	for (let index = 1; index < pastPeriodDates.length; index += 1) {
+		if (getCalendarDayNumber(pastPeriodDates[index]) - getCalendarDayNumber(pastPeriodDates[index - 1]) > 1) {
+			periodStart = pastPeriodDates[index];
+		}
+	}
+
+	const cycleDay = getCalendarDayNumber(todayKey) - getCalendarDayNumber(periodStart) + 1;
+	const phase = cycleDay <= 5
+		? 'period'
+		: cycleDay <= 13
+			? 'follicular'
+			: cycleDay === 14
+				? 'ovulation'
+				: 'luteal';
+
+	return { day: cycleDay, phase };
+}
+
 const periodTrackingDrafts = new Map();
 
 function getPeriodTrackingDraft(storageKey, dateKey) {
@@ -411,6 +453,137 @@ function initializePeriodCalendars() {
 
 		renderDays();
 	});
+}
+
+function initializeCycleCounters() {
+	document.querySelectorAll('[data-cycle-counter]').forEach((counter) => {
+		const heading = counter.querySelector('[data-cycle-heading]');
+		const description = counter.querySelector('[data-cycle-description]');
+		const storageKey = counter.dataset.storageKey;
+
+		if (!heading || !description || !storageKey) {
+			return;
+		}
+
+		const render = () => {
+			try {
+				const { periodDates } = readPeriodTrackingData(storageKey);
+				const cycleInfo = getCurrentCycleInfo(periodDates);
+
+				if (!cycleInfo) {
+					heading.textContent = counter.dataset.emptyTitle;
+					description.textContent = counter.dataset.emptyDescription;
+					return;
+				}
+
+				heading.textContent = counter.dataset[`${cycleInfo.phase}TitleTemplate`].replace('%d', String(cycleInfo.day));
+				description.textContent = counter.dataset[`${cycleInfo.phase}Description`];
+			} catch {
+				heading.textContent = counter.dataset.errorTitle;
+				description.textContent = counter.dataset.errorDescription;
+			}
+		};
+
+		window.addEventListener('projecttheme:period-data-updated', (event) => {
+			if (event.detail?.storageKey === storageKey && event.detail.source !== counter) {
+				render();
+			}
+		});
+		window.addEventListener('storage', (event) => {
+			if (event.key === storageKey) {
+				render();
+			}
+		});
+
+		render();
+	});
+}
+
+function initializeCyclePhaseCards(componentSelector, cardSelector, emptySelector, statusSelector, showAllWithoutCycle = false) {
+	document.querySelectorAll(componentSelector).forEach((component) => {
+		const cards = Array.from(component.querySelectorAll(cardSelector));
+		const emptyMessage = component.querySelector(emptySelector);
+		const status = component.querySelector(statusSelector);
+		const storageKey = component.dataset.storageKey;
+
+		if (!emptyMessage || !status || !storageKey) {
+			return;
+		}
+
+		const hideCards = () => {
+			cards.forEach((card) => {
+				card.hidden = true;
+			});
+		};
+		const render = () => {
+			try {
+				const { periodDates } = readPeriodTrackingData(storageKey);
+				const cycleInfo = getCurrentCycleInfo(periodDates);
+
+				if (!cycleInfo) {
+					if (showAllWithoutCycle) {
+						cards.forEach((card) => {
+							card.hidden = false;
+						});
+					} else {
+						hideCards();
+					}
+					emptyMessage.textContent = component.dataset.emptyMessage;
+					emptyMessage.hidden = false;
+					status.textContent = '';
+					return;
+				}
+
+				let visibleCardCount = 0;
+				cards.forEach((card) => {
+					const isCurrentPhase = card.dataset.phase === cycleInfo.phase;
+					card.hidden = !isCurrentPhase;
+					if (isCurrentPhase) {
+						visibleCardCount += 1;
+					}
+				});
+
+				emptyMessage.hidden = visibleCardCount > 0;
+				if (visibleCardCount === 0) {
+					emptyMessage.textContent = component.dataset.noTipsMessage || component.dataset.noContentMessage;
+					status.textContent = '';
+					return;
+				}
+
+				emptyMessage.textContent = '';
+				status.textContent = component.dataset.phaseStatusTemplate.replace(
+					'%s',
+					component.dataset[`${cycleInfo.phase}Label`],
+				);
+			} catch {
+				hideCards();
+				emptyMessage.textContent = component.dataset.errorMessage;
+				emptyMessage.hidden = false;
+				status.textContent = '';
+			}
+		};
+
+		window.addEventListener('projecttheme:period-data-updated', (event) => {
+			if (event.detail?.storageKey === storageKey && event.detail.source !== component) {
+				render();
+			}
+		});
+		window.addEventListener('storage', (event) => {
+			if (event.key === storageKey) {
+				render();
+			}
+		});
+
+		render();
+	});
+}
+
+function initializeHTSY() {
+	initializeCyclePhaseCards('[data-htsy]', '[data-htsy-card]', '[data-htsy-empty]', '[data-htsy-status]');
+}
+
+function initializeBodyMind() {
+	initializeCyclePhaseCards('[data-body-mind]', '[data-body-mind-card]', '[data-body-mind-empty]', '[data-body-mind-status]', true);
 }
 
 function initializeMoodTrackers() {
@@ -616,6 +789,9 @@ class General {
 document.addEventListener('DOMContentLoaded', () => {
 	initializeWideCarousels();
 	initializePeriodCalendars();
+	initializeCycleCounters();
+	initializeHTSY();
+	initializeBodyMind();
 	initializeMoodTrackers();
 	initializeActivityTrackers();
 	new General();

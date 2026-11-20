@@ -37,8 +37,29 @@ while (have_rows('page_modules')) : the_row();
     case 'hero':
       get_template_part('template-parts/flex/layout', 'hero'); break;
 
+    case 'hero_logo':
+      get_template_part('template-parts/flex/layout', 'hero-logo'); break;
+
+    case 'quote':
+      get_template_part('template-parts/flex/layout', 'quote'); break;
+
+    case 'how_it_works':
+      get_template_part('template-parts/flex/layout', 'how-it-works'); break;
+
     case 'calendarl':
       get_template_part('template-parts/flex/layout', 'calendarl'); break;
+
+    case 'cycle_counter':
+      get_template_part('template-parts/flex/layout', 'cycle-counter'); break;
+
+    case 'htsy':
+      get_template_part('template-parts/flex/layout', 'htsy'); break;
+
+    case 'body_mind':
+      get_template_part('template-parts/flex/layout', 'body-mind'); break;
+
+    case 'button':
+      get_template_part('template-parts/flex/layout', 'button'); break;
 
     case 'mood':
       get_template_part('template-parts/flex/layout', 'mood'); break;

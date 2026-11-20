@@ -24,6 +24,26 @@ footer .footer-content {
   }
 }
 
+.footer-logo {
+  position: relative;
+}
+
 .footer-logo img {
-  filter: brightness(0) invert(1);
+  display: block;
+  filter: none;
+}
+
+@supports (mask-image: url("../images/flowwing.svg")) or (-webkit-mask-image: url("../images/flowwing.svg")) {
+  .footer-logo img {
+    opacity: 0;
+  }
+
+  .footer-logo::after {
+    position: absolute;
+    inset: 0;
+    background-color: var(--theme-color-primary);
+    content: "";
+    -webkit-mask: url("../images/flowwing.svg") center / contain no-repeat;
+    mask: url("../images/flowwing.svg") center / contain no-repeat;
+  }
 }
