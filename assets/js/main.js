@@ -11,6 +11,8 @@ function initializeWideCarousels() {
 		}
 
 		const track = carousel.querySelector('.carousel-w__track');
+		const previousButton = carousel.querySelector('[data-carousel-w-previous]');
+		const nextButton = carousel.querySelector('[data-carousel-w-next]');
 		let activeIndex = Number(carousel.dataset.initialIndex) || 0;
 		let scrollFrame = null;
 		let scrollTimer = null;
@@ -113,6 +115,9 @@ function initializeWideCarousels() {
 			const index = Number(indicator.dataset.carouselWIndicator ?? indicator.dataset.carouselNavIndex);
 			indicator.addEventListener('click', () => setActive(index, true));
 		});
+
+		previousButton?.addEventListener('click', () => setActive(activeIndex - 1, true, -1));
+		nextButton?.addEventListener('click', () => setActive(activeIndex + 1, true, 1));
 
 		viewport.addEventListener('keydown', (event) => {
 			if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {

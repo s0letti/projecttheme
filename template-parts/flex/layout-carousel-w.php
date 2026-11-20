@@ -19,7 +19,15 @@ $initial_index = count($cards) > 1 ? 1 : 0;
   aria-roledescription="<?php esc_attr_e('carousel', 'projecttheme'); ?>"
   aria-label="<?php esc_attr_e('Carousel', 'projecttheme'); ?>"
 >
-  <div class="carousel-w__frame">
+  <div class="carousel-w__stage">
+    <?php if (count($cards) > 1) : ?>
+      <button class="carousel-w__arrow carousel-w__arrow--previous" type="button" data-carousel-w-previous aria-label="<?php esc_attr_e('Previous slide', 'projecttheme'); ?>">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6" /></svg>
+      </button>
+      <button class="carousel-w__arrow carousel-w__arrow--next" type="button" data-carousel-w-next aria-label="<?php esc_attr_e('Next slide', 'projecttheme'); ?>">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6" /></svg>
+      </button>
+    <?php endif; ?>
     <div class="carousel-w__viewport" tabindex="0">
       <div class="carousel-w__track">
         <?php foreach ($cards as $index => $card) :

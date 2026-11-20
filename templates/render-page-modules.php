@@ -14,7 +14,7 @@ while (have_rows('page_modules')) : the_row();
   $layout = get_row_layout();
   $opts = [
     'name'       => $layout,
-    'container'  => $layout === 'carousel_w' ? 'none' : (get_sub_field('container') ?: 'container-lg'),
+    'container'  => in_array($layout, ['carousel_w', 'c_hormonal', 'c_non_hormonal'], true) ? 'none' : (get_sub_field('container') ?: 'container-lg'),
     'padding_y'  => get_sub_field('padding_y') ?: 'py-5',
     'bg'         => get_sub_field('background') ?: 'none',
     'id'         => get_sub_field('id-anchor') ?: '',
@@ -60,6 +60,15 @@ while (have_rows('page_modules')) : the_row();
 
     case 'text_img':
       get_template_part('template-parts/flex/layout', 'text-img'); break;
+
+    case 'c_hormonal':
+      get_template_part('template-parts/flex/layout', 'c-hormonal'); break;
+
+    case 'c_non_hormonal':
+      get_template_part('template-parts/flex/layout', 'c-non-hormonal'); break;
+
+    case 'contraction_possibilities':
+      get_template_part('template-parts/flex/layout', 'contraction-possibilities'); break;
 
     case 'image_slider':
       get_template_part('template-parts/flex/layout', 'image-slider'); break;

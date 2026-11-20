@@ -875,6 +875,351 @@
                     "acfe_flexible_settings_size": false,
                     "acfe_flexible_modal_edit_size": false
                 },
+                "layout_c_hormonal": {
+                    "key": "layout_c_hormonal",
+                    "name": "c_hormonal",
+                    "label": "C_Hormonal",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_c_hormonal_heading",
+                            "label": "Überschrift",
+                            "name": "heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Hormonal",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_c_hormonal_pill_title",
+                            "label": "Titel: The Pill",
+                            "name": "pill_title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "The Pill",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_c_hormonal_pill_text",
+                            "label": "Text: The Pill",
+                            "name": "pill_text",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "The combined pill contains estrogen and progestin, which keep your hormone levels steady and usually stop ovulation. Without ovulation, there is no natural hormone peak, so the typical cycle phases are largely absent. The monthly bleed during the break or placebo week is a withdrawal bleed, not a true period.",
+                            "acfe_textarea_code": 0,
+                            "maxlength": "",
+                            "rows": 5,
+                            "placeholder": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_c_hormonal_iud_title",
+                            "label": "Titel: The Hormonal IUD",
+                            "name": "iud_title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "The Hormonal IUD",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_c_hormonal_iud_text",
+                            "label": "Text: The Hormonal IUD",
+                            "name": "iud_text",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "The hormonal IUD releases a small amount of progestin directly into the uterus. It thickens cervical mucus so sperm cannot pass and thins the uterine lining. Because most of the hormone acts locally, many users keep ovulating, so the natural cycle phases and hormone shifts often continue.",
+                            "acfe_textarea_code": 0,
+                            "maxlength": "",
+                            "rows": 5,
+                            "placeholder": "",
+                            "new_lines": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Interaktive Elemente"
+                    ],
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_thumbnail": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": false,
+                    "acfe_flexible_modal_edit_size": false
+                },
+                "layout_c_non_hormonal": {
+                    "key": "layout_c_non_hormonal",
+                    "name": "c_non_hormonal",
+                    "label": "C_Non_Hormonal",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_c_non_hormonal_heading",
+                            "label": "Überschrift",
+                            "name": "heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Non Hormonal",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_c_non_hormonal_condom_title",
+                            "label": "Titel: The Condom",
+                            "name": "condom_title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "The Condom",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_c_non_hormonal_condom_text",
+                            "label": "Text: The Condom",
+                            "name": "condom_text",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Condoms are a barrier method and contain no hormones, so they do not affect your natural cycle at all. Ovulation, hormone shifts and bleeding stay exactly as they are, and the cycle phases and their effects on mood and energy apply fully. They are also the only method in this list that protects against sexually transmitted infections.",
+                            "acfe_textarea_code": 0,
+                            "maxlength": "",
+                            "rows": 5,
+                            "placeholder": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_c_non_hormonal_copper_iud_title",
+                            "label": "Titel: The Copper IUD",
+                            "name": "copper_iud_title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "The Copper IUD",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_c_non_hormonal_copper_iud_text",
+                            "label": "Text: The Copper IUD",
+                            "name": "copper_iud_text",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "The copper IUD is a hormone-free device placed in the uterus. The copper releases ions that are toxic to sperm and also cause a mild inflammatory reaction in the uterus, which makes it hard for sperm to survive and reach the egg. Because it contains no hormones, you keep ovulating and your natural cycle continues.",
+                            "acfe_textarea_code": 0,
+                            "maxlength": "",
+                            "rows": 5,
+                            "placeholder": "",
+                            "new_lines": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Interaktive Elemente"
+                    ],
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_thumbnail": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": false,
+                    "acfe_flexible_modal_edit_size": false
+                },
+                "layout_contraction_possibilities": {
+                    "key": "layout_contraction_possibilities",
+                    "name": "contraction_possibilities",
+                    "label": "Contraction Possibilities",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_contraction_possibilities_title",
+                            "label": "Titel",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Contraction Possibilities",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_contraction_possibilities_text",
+                            "label": "Text",
+                            "name": "text",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Not all contraceptives are the same. Depending on whether the contraceptive is hormonal or non-hormonal, it affects the menstrual cycle in different ways. Understanding the difference can help you make sense of what you feel and what your body is doing.",
+                            "acfe_textarea_code": 0,
+                            "maxlength": "",
+                            "rows": 3,
+                            "placeholder": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_contraction_possibilities_hormonal_button",
+                            "label": "Hormonal button label",
+                            "name": "hormonal_button",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Hormonal",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_contraction_possibilities_non_hormonal_button",
+                            "label": "Non Hormonal button label",
+                            "name": "non_hormonal_button",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Non Hormonal",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Interaktive Elemente"
+                    ],
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_thumbnail": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": false,
+                    "acfe_flexible_modal_edit_size": false
+                },
                 "layout_image_slider": {
                     "key": "layout_image_slider",
                     "name": "image_slider",
@@ -2060,5 +2405,5 @@
             "json"
         ]
     },
-    "modified": 1794927141
+    "modified": 1795187734
 }
