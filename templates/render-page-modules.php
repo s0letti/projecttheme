@@ -37,6 +37,15 @@ while (have_rows('page_modules')) : the_row();
     case 'hero':
       get_template_part('template-parts/flex/layout', 'hero'); break;
 
+    case 'calendarl':
+      get_template_part('template-parts/flex/layout', 'calendarl'); break;
+
+    case 'mood':
+      get_template_part('template-parts/flex/layout', 'mood'); break;
+
+    case 'activities':
+      get_template_part('template-parts/flex/layout', 'activities'); break;
+
     case 'intro':
       get_template_part('template-parts/flex/layout', 'intro'); break;
 
